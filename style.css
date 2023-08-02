@@ -9,12 +9,19 @@
 body {
   font-family: "Roboto", Arial, sans-serif;
   height: 100vh;
+  width: 100vw;
   display: inline-flex;
+  overflow-x: hidden;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .sidebar {
   background: #212121;
   width: 15rem;
+  min-width: 15rem;
   height: 100%;
   overflow-y: scroll;
 }
@@ -98,4 +105,115 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.subscriptions {}
+main {
+  background-color: #181818;
+  /* width: 100%; */
+}
+
+nav {
+  display: block;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+nav>div {
+  display: inline-block;
+}
+
+.nav-icons {
+  position: relative;
+  top: 0.4rem;
+  margin-left: 5rem;
+}
+
+.nav-icons button {
+  border: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav-icons button img {
+  padding: 0.75rem;
+  height: 100%;
+  width: 100%;
+  filter: invert(1);
+}
+
+.nav-icon-profile {
+  padding: 0px !important;
+  filter: none !important;
+}
+
+.search {
+  position: relative;
+  top: -0.75rem;
+  display: inline-flex;
+}
+
+.search button {
+  border: 0px;
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  position: relative;
+}
+
+.searchbar {
+  display: flex;
+  background-color: #181818;
+  border: 2px solid #323232;
+}
+
+.searchbar button {
+  background-color: #323232;
+  border: 0px;
+  height: 2.75rem;
+  width: 4.5rem;
+  padding: 0.5rem;
+}
+
+.searchbar img {
+  filter: invert(1);
+  height: 100%;
+}
+
+.searchbar input {
+  background-color: transparent;
+  border: 0px;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  color: white;
+  min-width: 30rem;
+}
+
+.searchbar input:focus {
+  outline: 1px solid #4d4d4d;
+}
+
+.tags {
+  padding: 0.75rem 0.75rem;
+  display: inline-flex;
+  overflow-x: hidden;
+  gap: 1rem;
+  width: calc(100% - 7rem);
+  white-space: nowrap;
+  margin: 0px 0.5rem;
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.tags::-webkit-scrollbar:horizontal {
+  height: 0.3rem;
+}
+
+.tags .tag {
+  padding: 0.4rem 1rem;
+  background-color: #383838;
+  color: white;
+  border-radius: 2rem;
+  font-size: 15px;
+  border: 1px solid #4d4d4d;
+}
