@@ -14,7 +14,8 @@ body {
   overflow-x: hidden;
 }
 
-button:hover {
+button:hover,
+.tags:hover {
   cursor: pointer;
 }
 
@@ -209,11 +210,118 @@ nav>div {
   height: 0.3rem;
 }
 
-.tags .tag {
+.tag {
   padding: 0.4rem 1rem;
   background-color: #383838;
   color: white;
   border-radius: 2rem;
   font-size: 15px;
   border: 1px solid #4d4d4d;
+}
+
+.active {
+  color: #181818;
+  background-color: white;
+}
+
+.videos {
+  padding: 1rem .5rem 1rem 1.5rem;
+  height: calc(100% - 10rem);
+  overflow-y: scroll;
+  width: calc(100% - 6rem);
+}
+
+.video {
+  width: 17rem;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  margin: 0.25rem;
+  padding: 0 0.4rem;
+  dis
+}
+
+.mix {
+  position: relative;
+  top: -1rem;
+}
+
+.mix .content {
+  margin: 0px;
+}
+
+.mix img::after {
+  content: "";
+  background-image: url("assets/playlist2.png");
+}
+
+.playlist {
+  height: 1.25rem;
+  width: calc(100% - 0.75rem);
+  position: absolute;
+  top: 8.5rem;
+  background-color: rgba(147, 147, 147, 0.1);
+  backdrop-filter: blur(10px) saturate(200%);
+}
+
+.playlist img {
+  height: 100%;
+}
+
+.videos::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.videos::-webkit-scrollbar-thumb {
+  background-color: #5b5b5b;
+}
+
+.video>img {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.details * {
+  display: inline-block;
+}
+
+.video:hover {
+  background-color: #383838;
+  cursor: pointer;
+}
+
+.details {
+  margin: 0.5rem;
+  text-align: start;
+  display: inline-flex;
+}
+
+.details>img {
+  height: 2rem;
+}
+
+.content {
+  margin-left: 0.7rem;
+}
+
+.title {
+  font-weight: 500;
+  max-height: 3.75rem;
+  overflow: hidden;
+  display: block;
+}
+
+.channel {
+  font-weight: 300;
+  opacity: 0.8;
+  font-size: 14px;
+  margin-top: 0.25rem;
+}
+
+.views-date {
+  font-weight: 300;
+  opacity: 0.7;
+  font-size: 14px;
+  margin-top: 0.2rem;
+  display: inline-block;
 }
