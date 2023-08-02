@@ -2,7 +2,7 @@
 
 ## Output
 Live link : https://alwinsunil.github.io/youtube-clone-boilerplate/
-![](https://github.com/AlwinSunil/youtube-clone-boilerplate/screenshot/result_ca1.pngs)
+![](https://github.com/AlwinSunil/youtube-clone-boilerplate/screenshot/result_ca1.png?raw=true)
 
 ## Here is the expected output
 
