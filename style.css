@@ -8,10 +8,11 @@
 
 body {
   font-family: "Roboto", Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
-  display: inline-flex;
-  overflow-x: hidden;
 }
 
 button:hover,
@@ -21,10 +22,16 @@ button:hover,
 
 .sidebar {
   background: #212121;
-  width: 15rem;
   min-width: 15rem;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow-y: scroll;
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -60,7 +67,6 @@ button:hover,
 
 .sidebar-content {
   padding-right: 1rem;
-
 }
 
 .menu {
@@ -70,7 +76,7 @@ button:hover,
 
 .menu span {
   padding: 0.4rem 1rem;
-  display: inline-flex;
+  display: flex;
   color: white;
   width: 100%;
 }
@@ -108,24 +114,17 @@ button:hover,
 
 main {
   background-color: #181818;
-  /* width: 100%; */
+  width: calc(100% - 15rem);
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 0.5rem 1rem;
-  width: 100%;
   text-align: center;
-}
-
-nav>div {
-  display: inline-block;
-}
-
-.nav-icons {
-  position: relative;
-  top: 0.4rem;
-  margin-left: 5rem;
 }
 
 .nav-icons button {
@@ -150,16 +149,21 @@ nav>div {
 }
 
 .search {
-  position: relative;
-  top: -0.75rem;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-mobile {
+  display: none;
 }
 
 .search button {
   border: 0px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem;
+  display: flex;
   background-color: transparent;
-  position: relative;
 }
 
 .searchbar {
@@ -174,6 +178,7 @@ nav>div {
   height: 2.75rem;
   width: 4.5rem;
   padding: 0.5rem;
+  justify-content: center;
 }
 
 .searchbar img {
@@ -187,7 +192,8 @@ nav>div {
   font-size: 1rem;
   padding: 0.6rem 1rem;
   color: white;
-  min-width: 30rem;
+  min-width: 15rem;
+  max-width: 30rem;
 }
 
 .searchbar input:focus {
@@ -196,10 +202,8 @@ nav>div {
 
 .tags {
   padding: 0.75rem 0.75rem;
-  display: inline-flex;
-  overflow-x: hidden;
+  display: flex;
   gap: 1rem;
-  width: calc(100% - 7rem);
   white-space: nowrap;
   margin: 0px 0.5rem;
   border-top: 1px solid #4d4d4d;
@@ -225,10 +229,12 @@ nav>div {
 }
 
 .videos {
-  padding: 1rem .5rem 1rem 1.5rem;
-  height: calc(100% - 10rem);
+  padding: 1rem 0.5rem 1rem 1.5rem;
   overflow-y: scroll;
-  width: calc(100% - 6rem);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .video {
@@ -238,12 +244,10 @@ nav>div {
   text-align: center;
   margin: 0.25rem;
   padding: 0 0.4rem;
-  dis
 }
 
 .mix {
   position: relative;
-  top: -1rem;
 }
 
 .mix .content {
@@ -257,9 +261,9 @@ nav>div {
 
 .playlist {
   height: 1.25rem;
-  width: calc(100% - 0.75rem);
   position: absolute;
-  top: 8.5rem;
+  top: 8.25rem;
+  width: calc(100% - 0.8rem);
   background-color: rgba(147, 147, 147, 0.1);
   backdrop-filter: blur(10px) saturate(200%);
 }
@@ -276,7 +280,7 @@ nav>div {
   background-color: #5b5b5b;
 }
 
-.video>img {
+.video > img {
   margin-top: 0.4rem;
   width: 100%;
 }
@@ -293,10 +297,10 @@ nav>div {
 .details {
   margin: 0.5rem;
   text-align: start;
-  display: inline-flex;
+  display: flex;
 }
 
-.details>img {
+.details > img {
   height: 2rem;
 }
 
@@ -324,4 +328,102 @@ nav>div {
   font-size: 14px;
   margin-top: 0.2rem;
   display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .sidebar {
+    display: none;
+    position: absolute;
+    z-index: 99;
+  }
+
+  .search {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tags {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 2.5rem;
+  }
+
+  .tag {
+    height: 2rem;
+  }
+
+  .videos {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: inherit;
+    align-items: center;
+  }
+
+  .nav-icons button {
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .nav-icons button img {
+    padding: 0.5rem;
+  }
+
+  .nav-icons button:last-child {
+    display: block;
+  }
+
+  .header-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-mobile a {
+    height: 1.6rem;
+  }
+
+  .header-mobile img {
+    height: 1.6rem;
+  }
+
+  .header-mobile button img {
+    filter: invert(1);
+    margin-right: 0.5rem;
+  }
+
+  .search > button {
+    display: none;
+  }
+
+  .searchbar {
+    border: 0px;
+  }
+
+  .searchbar input {
+    display: none;
+  }
+
+  .searchbar button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+  }
+
+  .nav-icons {
+    display: flex;
+  }
+}
+
+.sidebar-active {
+  display: block;
 }

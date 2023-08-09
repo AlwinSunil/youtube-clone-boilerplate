@@ -1,7 +1,8 @@
 # youtube-clone-boilerplate
 
 ## Output
-Live link : https://alwinsunil.github.io/youtube-clone-boilerplate/
+Live link: https://alwinsunil.github.io/youtube-clone-boilerplate/
+
 ![](https://github.com/AlwinSunil/youtube-clone-boilerplate/blob/main/screenshot/result_ca1.png?raw=true)
 
 ## Here is the expected output
